@@ -1,1 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
+.softwarexpressllc-text {
+	color: grey;
+	font-family: "PT Sans",arial;
+	font-size: 15px;
+}
+
+#blog > h1 {
+    font-style: normal;
+    text-align: center;
+    /*font-size: 2rem;*/
+    margin-top: 20px;
+    margin-bottom: 0px;
+    color: #696969;    
+}
+
+#blog > h2 {    
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 20px;    
+}
+
+#blog > .blog-text {
+    font-style: normal;
+    font-size: 14px;        
+}
+
+#blog hr {
+	margin: 0 30% 0 30%;
+    padding: 0;
+    color: #c7c7c7;  	
+}
+
+.roundImage {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+    width: 40px;    
+    height: 40px;
+}
+
+#blog > .middle {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#blog > a {
+    font-size: 15px;
+    font-style: normal;
+    color: #97be0c;
+    margin-left: 20px;
+    text-decoration: underline;
+}

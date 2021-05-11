@@ -1,0 +1,61 @@
+.container {
+    margin: 0px 0 20px 0;
+    height: 500px;	
+}
+
+.container label {
+    font-style: italic;
+}
+
+.container a {
+    font-style: italic;
+    margin-left: 20px;
+    margin-right: 10px;    
+    color: #97be0c;
+}
+
+hr {
+	margin: 0;
+    padding: 0;
+    color: #c7c7c7;  	
+}
+
+.vertical-line {
+  border-right: solid #dedede;
+  border-width: 1px;  
+}
+
+.home-title {
+    /*font-style: italic;*/
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;    
+}
+
+.home-text-italic {
+    font-style: italic;
+    font-size: 15px;
+    color: #97be0c;
+}
+
+.container h5 {
+    font-style: italic;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    color: #696969;
+}
+
+.container h4 {
+    font-style: normal;
+    text-align: center;    
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;    
+}

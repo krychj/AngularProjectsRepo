@@ -1,0 +1,34 @@
+.footer {
+	/*background-color: #0c3c73;*/
+	background-color: #646464;
+	padding: 10px 0 10px 0px;	 	
+}
+
+.footer p {	
+	font-family: Veranda, Sans-serif;
+	font-size: 15px;
+	font-style: italic;
+	color: #c7c7c7;
+	color: #FFFFFF;	
+	vertical-align: middle;	
+}
+
+.footer a p {	
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+
+.footer a:hover {	
+	color: white;
+}
+
+.footer h4 {
+	font-family: Veranda, Sans-serif;	
+	font-style: italic;
+	color: #FFFFFF;	
+	text-decoration: underline;
+}
+
+.col-md-4 {	
+  	border-right: 1px solid #c7c7c7;
+}

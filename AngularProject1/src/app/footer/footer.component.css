@@ -1,34 +1,20 @@
-.footer {
-	/*background-color: #0c3c73;*/
-	background-color: #646464;
+.footer {	
 	padding: 10px 0 10px 0px;	 	
 }
 
 .footer p {	
-	font-family: Veranda, Sans-serif;
-	font-size: 15px;
-	font-style: italic;
-	color: #c7c7c7;
-	color: #FFFFFF;	
-	vertical-align: middle;	
+    color: grey;
+	font-family: "PT Sans",arial;
+    font-size: 16px;
+    vertical-align: middle;
 }
 
-.footer a p {	
-	margin-bottom: 0px;
-	padding-bottom: 0px;
+hr {
+	margin: 0;
+   	padding: 0;	
 }
 
-.footer a:hover {	
-	color: white;
-}
-
-.footer h4 {
-	font-family: Veranda, Sans-serif;	
-	font-style: italic;
-	color: #FFFFFF;	
-	text-decoration: underline;
-}
-
-.col-md-4 {	
-  	border-right: 1px solid #c7c7c7;
+.container a {
+    font-style: italic;
+    color: #97be0c;
 }

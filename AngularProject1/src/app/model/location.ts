@@ -1,3 +1,4 @@
-export class Location {
-    name!: string;
+export interface Location {
+    id: string;
+    name: string;
 }

@@ -1,5 +1,14 @@
 [
-    "Manitou Springs, CO",
-    "Colorado Springs, CO",
-    "Denver, CO"    
+	{
+		"id": "1",
+		"name": "Manitou Springs, CO"
+	},
+	{
+		"id": "2",
+		"name": "Colorado Springs, CO"
+    },
+    {
+		"id": "3",
+		"name": "Denver, CO"
+	}
 ]

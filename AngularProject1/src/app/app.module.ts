@@ -7,20 +7,36 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StatsComponent } from './stats/stats.component';
+import { APP_INITIALIZER } from '@angular/core';
+import { ResourceService } from './services/ResourceService';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+        ResourceService,
+        {
+        provide: APP_INITIALIZER,
+        useFactory: resourceProviderFactory,
+        deps: [ResourceService],
+        multi: true
+        },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export function resourceProviderFactory(provider: ResourceService) {
+    return () => provider.loadLocations();
+}

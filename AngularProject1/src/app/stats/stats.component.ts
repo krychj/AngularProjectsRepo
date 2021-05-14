@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../services/LocationService';
-import { BehaviorSubject } from 'rxjs';
 import { Location } from '../model/location';
 
 @Component({
@@ -10,18 +9,17 @@ import { Location } from '../model/location';
 })
 export class StatsComponent implements OnInit {
 
-    selectedLocation$: BehaviorSubject<Location>;
     selectedLocation!: Location;
 
     constructor(private locationService: LocationService) {
-        this.selectedLocation$ = this.locationService.getLocation();
+        this.locationService.selectedLocation$
+            .subscribe((location: Location) => {
+                this.selectedLocation = location;
+            });
     }
 
     ngOnInit(): void {
-        this.locationService.selectedLocation$.subscribe(location => {
-            console.log(location);
-            this.selectedLocation = location;
-        });
+
     }
 
 }

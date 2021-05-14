@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 import { Location } from '../model/location';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LocationService } from './LocationService';
@@ -9,8 +8,6 @@ import { LocationService } from './LocationService';
     providedIn: 'root'
 })
 export class ResourceService {
-
-    selectedLocation$ = new BehaviorSubject<string>('init');
 
     constructor(private http: HttpClient, private locationSvc: LocationService) {
 
@@ -23,13 +20,9 @@ export class ResourceService {
             .get<Location[]>('assets/sample-data/locations.json', {headers})
             .subscribe((response: Location[]) => {
                 const location: Location = response[0];
-                console.log(location);
-                this.selectedLocation$.next(location.name);
-                this.locationSvc.updateSelectedLocation(location)
+                console.log('First location loaded by ResourceService: ' + location.name);
+                this.locationSvc.updateSelectedLocation(location);
+                this.locationSvc.updateLocations(response);
             });
-    }
-
-    getLocation(): BehaviorSubject<string> {
-        return this.selectedLocation$;
     }
 }

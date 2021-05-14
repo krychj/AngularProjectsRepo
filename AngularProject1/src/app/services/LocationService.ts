@@ -12,11 +12,23 @@ export class LocationService {
         name: 'Manitou Spring, CO - init'
     };
 
-    selectedLocation$ = new BehaviorSubject<Location>(this.defaultLocation);
-    locations$ = new BehaviorSubject<Location[]>([]);
+    locations: Location[] = [
+        {
+            id: '1',
+            name: 'Manitou Spring, CO - init'
+        }
+    ];
 
-    getLocation(): BehaviorSubject<Location> {
-        return this.selectedLocation$;
+    selectedLocation$ = new BehaviorSubject<Location>(this.defaultLocation);
+    locations$ = new BehaviorSubject<Location[]>(this.locations);
+
+    getLocation(): Location {
+        return this.selectedLocation$.getValue();
+    }
+
+    getLocations(): Location[] {
+        const locations: Location[] = this.locations$.getValue();
+        return locations;
     }
 
     public updateSelectedLocation(location: Location): void{

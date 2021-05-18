@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StatsComponent } from './stats/stats.component';
 import { APP_INITIALIZER } from '@angular/core';
-import { ResourceService } from './services/ResourceService';
+import { InitializerService } from './services/InitializerService';
 
 @NgModule({
   declarations: [
@@ -25,11 +25,11 @@ import { ResourceService } from './services/ResourceService';
     HttpClientModule
   ],
   providers: [
-        ResourceService,
+        InitializerService,
         {
         provide: APP_INITIALIZER,
-        useFactory: resourceProviderFactory,
-        deps: [ResourceService],
+        useFactory: initServices,
+        deps: [InitializerService],
         multi: true
         },
   ],
@@ -37,6 +37,7 @@ import { ResourceService } from './services/ResourceService';
 })
 export class AppModule { }
 
-export function resourceProviderFactory(provider: ResourceService) {
-    return () => provider.loadLocations();
+// tslint:disable-next-line: typedef
+export function initServices(initService: InitializerService) {
+    return () => initService.initialize();
 }

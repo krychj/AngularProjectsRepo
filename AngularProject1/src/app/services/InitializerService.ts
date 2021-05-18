@@ -2,18 +2,24 @@ import { Injectable } from '@angular/core';
 import { Location } from '../model/location';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { LocationService } from './LocationService';
+import { Subscription } from 'rxjs';
 
 
 @Injectable({
     providedIn: 'root'
 })
-export class ResourceService {
+export class InitializerService {
 
     constructor(private http: HttpClient, private locationSvc: LocationService) {
 
     }
 
-    loadLocations() {
+    // tslint:disable-next-line: typedef
+    async initialize() {
+        this.locationSvc.initialize();
+    }
+
+    /* loadLocations(): Subscription {
         const headers = new HttpHeaders();
         headers.set('Content-Type', 'application/json');
         return this.http
@@ -24,5 +30,5 @@ export class ResourceService {
                 this.locationSvc.updateSelectedLocation(location);
                 this.locationSvc.updateLocations(response);
             });
-    }
+    } */
 }

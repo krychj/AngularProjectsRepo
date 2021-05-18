@@ -12,28 +12,28 @@ import { APP_INITIALIZER } from '@angular/core';
 import { InitializerService } from './services/InitializerService';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    FooterComponent,
-    StatsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
-  providers: [
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        HeaderComponent,
+        FooterComponent,
+        StatsComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule
+    ],
+    providers: [
         InitializerService,
         {
-        provide: APP_INITIALIZER,
-        useFactory: initServices,
-        deps: [InitializerService],
-        multi: true
+            provide: APP_INITIALIZER,
+            useFactory: initServices,
+            deps: [InitializerService],
+            multi: true
         },
-  ],
-  bootstrap: [AppComponent]
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
 
